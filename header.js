@@ -2,7 +2,7 @@ function loadHeader() {
     const headerContainer = document.getElementById('header-container');
 
     // Detecta automaticamente a profundidade da página
-    const basePath = /SEA-site/;
+    const basePath = /seasite/;
 
     const headerHTML = `
         <header>
@@ -256,3 +256,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
