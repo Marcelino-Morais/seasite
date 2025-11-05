@@ -1,0 +1,846 @@
+/* Reset e estilos gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Cabeçalho */
+        header {
+            background-color: #254059;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: #3498db;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #3498db;
+        }
+        /* Header com imagem e texto lado a lado */
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-image {
+            width: 120px; /* Ajuste o tamanho conforme necessário */
+            height: 60px;
+            border-radius: 4px;
+        }
+        
+        .header-text {
+            flex: 1;
+            text-align: left;
+        }
+        
+        .header-text h1 {
+            font-size: 18px;
+            color: white;
+            margin: 0;
+            font-weight: bold;
+        }
+        
+        .header-text p {
+            font-size: 14px;
+            color: #bdc3c7;
+            margin: 2px 0 0 0;
+            font-style: italic;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        /* Para mobile */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .header-text {
+                text-align: center;
+            }
+            
+            .header-text h1 {
+                font-size: 16px;
+            }
+            
+            .header-text p {
+                font-size: 12px;
+            }
+            
+            nav ul {
+                margin-top: 10px;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+        }
+
+        /* Search Container */
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .search-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-btn {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .search-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .search-box {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            padding: 5px;
+            margin-top: 5px;
+            min-width: 250px;
+        }
+        
+        .search-box.active {
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-box input {
+            border: none;
+            padding: 8px 12px;
+            outline: none;
+            flex: 1;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .search-submit {
+            background: #3498db;
+            border: none;
+            color: white;
+            padding: 6px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .search-submit:hover {
+            background: #2980b9;
+        }
+        
+        /* Para mobile */
+        @media (max-width: 768px) {
+            .header-right {
+                flex-direction: column-reverse;
+                gap: 10px;
+                width: 100%;
+            }
+            
+            .search-container {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .search-box {
+                position: static;
+                width: 100%;
+                margin-top: 0;
+            }
+            
+            nav ul {
+                justify-content: center;
+            }
+        }
+
+        /* Menu Principal com Dropdown */
+        .main-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+        
+        .main-menu > li {
+            position: relative;
+        }
+        
+        .main-menu > li > a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            transition: background-color 0.3s;
+            white-space: nowrap;
+        }
+        
+        .main-menu > li > a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Submenu */
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 150px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border-radius: 4px;
+            list-style: none;
+            margin: 0;
+            padding: 5px 0;
+            z-index: 1000;
+        }
+        
+        .menu-dropdown:hover .submenu {
+            display: block;
+        }
+        
+        .submenu li {
+            margin: 0;
+        }
+        
+        .submenu li a {
+            color: #333;
+            text-decoration: none;
+            padding: 8px 15px;
+            display: block;
+            transition: background-color 0.3s;
+            font-size: 14px;
+        }
+        
+        .submenu li a:hover {
+            background-color: #f5f5f5;
+            color: #3498db;
+        }
+        
+        /* Seta indicadora para itens com dropdown */
+        .menu-dropdown > a::after {
+            content: " ▼";
+            font-size: 10px;
+            margin-left: 5px;
+        }
+        
+        /* Blogo não tem seta */
+        .main-menu > li:first-child > a::after {
+            content: none;
+        }
+        
+        /* Para mobile */
+        @media (max-width: 768px) {
+            .main-menu {
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .main-menu > li {
+                width: 100%;
+            }
+            
+            .submenu {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                background: rgba(255, 255, 255, 0.1);
+            }
+            
+            .submenu li a {
+                color: white;
+                padding: 8px 20px;
+            }
+            
+            .menu-dropdown:hover .submenu {
+                display: none;
+            }
+            
+            /* Para mobile, usar classe active no lugar de hover */
+            .menu-dropdown.active .submenu {
+                display: block;
+            }
+        }
+         /* Hover específico para cada nível */
+        .main-menu > .menu-dropdown:hover > .submenu {
+            display: block;
+        }
+        
+        .submenu > .menu-dropdown:hover > .submenu-level-2 {
+            display: block;
+            height: auto !important;
+            overflow: visible;
+        }
+
+        .submenu-level-2 > .menu-dropdown:hover > .submenu-level-3 {
+            display: block;
+        }
+
+        /* SUBMENU DE SEGUNDO NÍVEL */
+        .submenu-level-2 {
+            display: none;
+            position: absolute;
+            top: 100px;
+            right: 100%;
+            margin-right: 0;
+            min-width: 200px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border-radius: 4px;
+            list-style: none;
+            padding: 5px 0;
+            z-index: 1001;
+        }
+        
+
+        
+        /* Seta para subitens com submenu */
+        .submenu .menu-dropdown > a::after {
+            content: " ▶";
+            font-size: 10px;
+            margin-left: 5px;
+            float: right;
+        }
+
+        /*Submenu de terceiro nível*/
+        .submenu-level-3 {
+            display: none;
+            position: sticky;
+            top: 0;
+            right: 100%;
+            margin-right: 2px;
+            min-width: 200px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border-radius: 4px;
+            list-style: none;
+            padding: 5px 0;
+            z-index: 1002;
+            transform: translateY(-42px); /* Ajuste fino vertical */
+        }
+        
+        /* Seta para subitens com submenu */
+        .submenu .menu-dropdown > a::after {
+            content: " ▶";
+            font-size: 10px;
+            margin-left: 5px;
+            float: right;
+        }
+        
+        /* Para mobile */
+        @media (max-width: 768px) {
+            .submenu-level-2 {
+                position: static;
+                margin-left: 20px;
+                margin-top: 5px;
+                box-shadow: none;
+                background: rgba(255, 255, 255, 0.05);
+            }
+            
+            .submenu .menu-dropdown > a::after {
+                content: " ▼";
+                float: none;
+            }
+            
+            .submenu > .menu-dropdown.active > .submenu-level-2 {
+                display: block;
+            }
+        }
+
+        
+        /* Banner principal */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://konsolanto.org/wp-content/uploads/2024/03/cropped-sea-logo-1000x500-1.jpg?w=580&h=290'); /*Essa é uma imagem 100% ilustrativa, adicione outra se precisar!*/
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 15% 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background-color: white;
+            color: #3498db;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Seção de conteúdo */
+        .content-section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 36px;
+            color: #2c3e50;
+        }
+        
+        /*Muda a aparência de alguns pontos*/
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+            gap: 30px;
+        }
+
+        .features_blog {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: whitesmoke;
+            border-radius: 5px;
+            padding: 30px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: lightgray;
+        }
+        
+        .feature-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        .feature-card p {
+            color: #666;
+        }
+        
+        /* Seção sobre Esperanto */
+        .about-esperanto {
+            background-color: #2c3e50;
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            margin-bottom: 20px;
+            font-size: 36px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .content-section {
+            background-color: #f5f5f5; /* claro */
+            color: #333;
+        }
+        
+        /* Rodapé */
+        footer {
+        background-color: #1a252f;
+        color: white;
+        padding: 50px 0 20px;
+    }
+    
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .footer-column h3 {
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+    
+    .footer-column ul {
+        list-style: none;
+    }
+    
+    .footer-column ul li {
+        margin-bottom: 10px;
+    }
+    
+    .footer-column ul li a {
+        color: #bdc3c7;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    
+    .footer-column ul li a:hover {
+        color: #3498db;
+    }
+
+    /* Redes Sociais - Footer */
+    .social-links {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+    
+    .social-links a {
+        display: inline-block;
+        transition: transform 0.3s ease;
+    }
+    
+    .social-links a:hover {
+        transform: scale(1.1);
+    }
+    
+    .social-links svg {
+        width: 40px;
+        height: 40px;
+        transition: fill 0.3s ease;
+    }
+    
+    /* Facebook - Azul */
+    .social-links a:nth-child(1) svg {
+        fill: #c0c0c0; /* Azul do Facebook */
+    }
+    
+    .social-links a:nth-child(1):hover svg {
+        fill: #166fe5; /* Azul mais escuro no hover */
+    }
+    
+    /* Instagram - Rosa degradê */
+    .social-links a:nth-child(2) svg {
+        fill: #c0c0c0;; /* Usando gradiente */
+    }
+    
+    /* Fallback para navegadores que não suportam gradiente no SVG */
+    .social-links a:nth-child(2) svg {
+        fill: #c0c0c0; /* Rosa do Instagram */
+    }
+    
+    .social-links a:nth-child(2):hover svg {
+        fill: #d32a4a; /* Rosa mais escuro no hover */
+    }
+    
+    /* YouTube - Vermelho */
+    .social-links a:nth-child(3) svg {
+        fill: #c0c0c0; /* Vermelho do YouTube */
+    }
+    
+    .social-links a:nth-child(3):hover svg {
+        fill: #cc0000; /* Vermelho mais escuro no hover */
+    }
+
+    /* Email - Cinza/Laranja */
+    .social-links a:nth-child(4) svg {
+        fill: #c0c0c0;/* Cinza */
+    }
+    
+    .social-links a:nth-child(4):hover svg {
+        fill: #ea4335; /* Laranja/vermelho do Gmail no hover */
+    }
+
+    /* WhatsApp - Verde */
+    .social-links a:nth-child(5) svg {
+        fill: #c0c0c0; /* Verde do WhatsApp */
+    }
+    
+    .social-links a:nth-child(5):hover svg {
+        fill: #20bd5a; /* Verde mais escuro no hover */
+    }
+    
+    /* Ajuste para telas menores */
+    @media (max-width: 768px) {
+        .social-links {
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .social-links svg {
+            width: 35px;
+            height: 35px;
+        }
+    }
+        
+        /* Ajuste para telas menores */
+        @media (max-width: 768px) {
+            .social-links {
+                gap: 10px;
+                justify-content: center;
+            }
+            
+            .social-links svg {
+                width: 35px;
+                height: 35px;
+            }
+        }
+
+    /* No @media (max-width: 768px), adicione: */
+    @media (max-width: 768px) {
+        /* ... seus outros estilos ... */
+        
+        .footer-content {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            text-align: center;
+        }
+        
+        .social-links {
+            justify-content: center;
+        }
+    }
+    
+    .copyright {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid #34495e;
+        color: #bdc3c7;
+        font-size: 14px;
+    }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+        }
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000; /* maior que o header */
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    max-width: 350px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #666;
+}
+
+.close-modal:hover {
+    color: #e74c3c;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1500;
+}
+
+
+.donation-section {
+    background: linear-gradient(135deg, #2980b9, #2c3e50);
+    color: white;
+    text-align: center;
+    padding: 80px 0;
+}
+
+.donation-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.donation-section p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.donation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+section {
+    scroll-margin-top: 100px;
+    transition: all 0.3s ease-in-out;
+}
+
+.js-enabled .submenu, 
+.js-enabled .submenu-level-2,
+.js-enabled .submenu-level-3 {
+    display: none;
+}
+
+.js-enabled .menu-dropdown.active > .submenu {
+    display: block;
+}
